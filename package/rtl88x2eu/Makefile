@@ -26,6 +26,7 @@ define Build/Compile
 		CONFIG_USB_HCI=y \
 		CONFIG_PLATFORM_ARM_RPI=y \
 		USER_MODULE_NAME=8812eu \
+		KCFLAGS="-Wno-error=missing-prototypes" \
 		modules
 endef
 
