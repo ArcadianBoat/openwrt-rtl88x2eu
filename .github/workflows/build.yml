@@ -39,8 +39,17 @@ jobs:
             https://github.com/OpenHD/rtl88x2eu.git \
             sdk/package/rtl88x2eu/src
 
+      - name: Configure SDK
+        working-directory: sdk
+        env:
+          TERM: xterm
+        run: |
+          make defconfig
+
       - name: Compile package
         working-directory: sdk
+        env:
+          TERM: xterm
         run: |
           make package/rtl88x2eu/compile V=s
 
